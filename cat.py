@@ -3,9 +3,13 @@ This program prints stdin to the screen.
 '''
 import sys
 
+
 def cat(file):
-    data = file.read()
+    data = file.read(4096)
+    if not data:
+        return
     sys.stdout.buffer.write(data)
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
