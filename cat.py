@@ -5,8 +5,11 @@ import sys
 
 
 def cat(file):
-    data = file.read()
-    sys.stdout.buffer.write(data)
+    while True:
+        data = file.read(4096)
+        if not data:
+            break
+        sys.stdout.buffer.write(data)
 
 
 if __name__ == "__main__":
