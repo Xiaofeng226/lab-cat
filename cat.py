@@ -5,9 +5,7 @@ import sys
 
 
 def cat(file):
-    data = file.read(4096)
-    if not data:
-        return
+    data = file.read()
     sys.stdout.buffer.write(data)
 
 
